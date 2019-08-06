@@ -1,0 +1,214 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); /* only needed once */
+
+/* Hide all tabs (but not tab bar) when windowed. Preserves area for window controls (tested on macOS). */
+/*#TabsToolbar { 
+  visibility: collapse !important;
+}*/
+
+/* Hide the whole tab bar in fullscreen */
+/*#TabsToolbar[inFullscreen] { 
+  visibility: collapse !important; 
+}*/
+
+#nav-bar{
+    padding-top: 0px !important;
+    padding-bottom: 0 !important;
+    box-shadow: none !important;
+}
+
+/* Make private Browsing icon visible */
+#main-window[sizemode="maximized"][privatebrowsingmode=temporary] #private-browsing-indicator-titlebar > .private-browsing-indicator {
+  z-index: 1;
+}
+
+/* Hide sidebar header */
+#sidebar-header { visibility: collapse !important; }
+
+/* Decrease sidebar header text size */
+#sidebar-switcher-target { font-size: 75%; }
+
+#sidebar {
+  scrollbar-width: thin;
+}
+
+#TabsToolbar > .toolbar-items,
+#TabsToolbar > .titlebar-spacer { visibility: hidden }
+#nav-bar { 
+	margin-top: -32px; 
+	padding-left: 75px !important;
+}
+#nav-bar[inFullscreen] { 
+	padding-left: initial !important;
+}
+
+/* realign elements */
+#nav-bar {
+  margin-top: calc(-1 * var(--tab-min-height));
+  box-shadow: none !important;
+}
+
+.titlebar-buttonbox-container {
+  min-height: var(--tab-min-height);
+}
+
+/* recolor elements and enable window dragging */
+#navigator-toolbox {
+  background-color: var(--toolbar-bgcolor);
+  background-image: var(--toolbar-bgimage);
+  background-clip: padding-box;
+  color: var(--toolbar-color);
+  
+  -moz-window-dragging: drag;
+}
+
+/*
+https://github.com/moamenk/Firefox-Minimal-Responsive-Theme/blob/master/userChrome.css
+
+Hide navbar elements when not hovered
+*/
+
+:root:not([customizing]) #nav-bar toolbarbutton {
+    margin-left: -28px !important;
+    opacity: 0 !important;
+    transform: scale(.85, .85) !important;
+    pointer-events: none !important;
+    transition: all 150ms var(--animation-easing-function) !important;
+}
+
+:root:not([customizing]) :hover > #nav-bar toolbarbutton,
+:root:not([customizing]) #navigator-toolbox:focus-within #nav-bar toolbarbutton,
+:root:not([customizing]) :hover > #titlebar toolbarbutton {
+    transform: scale(1, 1) !important;
+	opacity: 1 !important;
+	margin-left: 0 !important;
+	pointer-events: auto !important;
+}
+
+/* url bar text shrinks when in "stealth mode" */
+/*
+#nav-bar #urlbar {
+	font-size: 0.85em !important;
+    transition: all 100ms var(--animation-easing-function) !important;
+}
+
+:root:not([customizing]) :hover > #nav-bar #urlbar,
+:root:not([customizing]) #navigator-toolbox:focus-within #nav-bar #urlbar {
+	font-size: 1.2em !important;
+}
+*/
+
+/*
+Remove borders everywhere, some code copied from edge style for firefox
+*/
+
+:root {
+  --tabs-border: transparent !important;
+}
+
+.tabbrowser-tab::after, .tabbrowser-tab::before {
+   border-left: none !important;
+}
+
+#urlbar, .searchbar-textbox {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+
+#urlbar {
+	/*text-align: center;*/
+}
+
+/* 
+URL Bar 
+*/
+#urlbar[focused="true"],
+#urlbar:hover, .searchbar-textbox:hover {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    outline: none !important;
+}
+
+#urlbar,
+.searchbar-textbox,
+#urlbar:hover,
+.searchbar-textbox:hover {
+    background: transparent !important;
+    /*height: 32px !important;
+    padding: 0 10px !important;
+    font-size: 1.1em !important;*/
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    -moz-appearance: none;
+    /*margin: 4px 0px !important;*/
+    /*min-height: 24px !important;*/
+    cursor: default;
+}
+
+/* 
+Hide buttons in URL bar
+*/
+
+/*#pageActionButton,
+#pocket-button-box,
+ar-button,
+#identity-box,
+.urlbar-history-dropmarker.urlbar-icon.chromeclass-toolbar-additional,
+#page-action-buttons,
+#PanelUI-menu-button,
+#identity-icon-labels {
+    display: none !important;
+    background: transparent !important;
+}*/
+
+#pageActionButton,
+#pocket-button-box,
+ar-button,
+/*#identity-box,*/
+.urlbar-history-dropmarker.urlbar-icon.chromeclass-toolbar-additional
+/*#page-action-buttons,*/
+/*#PanelUI-menu-button,*/
+/*#identity-icon-labels */
+{
+    display: none !important;
+    background: transparent !important;
+}
+
+/* Old stuff */
+
+/*#tabbrowser-tabs {visibility: collapse !important;}
+
+#titlebar-buttonbox { 
+  position: relative !important;
+  overflow-x: hidden !important;
+  height: 10px !important;
+  -moz-transition: all .2s ease-out .2s !important;
+}
+  
+#titlebar-buttonbox:hover {
+  margin-top: -15px !important;
+  margin-bottom: 5px !important;
+  height: 60px !important;	
+}
+
+[privatebrowsingmode="temporary"] #titlebar {margin-bottom: 0px !important;} 
+[privatebrowsingmode="temporary"] #titlebar-buttonbox {
+  height: 30px !important; 
+  -moz-transition: none !important;
+}
+[privatebrowsingmode="temporary"] #titlebar-buttonbox:hover {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+  height: 30px !important;
+}
+
+[privatebrowsingmode="temporary"] #TabsToolbar {
+	visibility: collapse !important;
+}
+[privatebrowsingmode="temporary"] #titlebar-spacer {
+  background-image: url("chrome://browser/skin/private-browsing.svg");
+  background-repeat: no-repeat;
+  background-position: right;
+}  */
