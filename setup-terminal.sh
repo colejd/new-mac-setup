@@ -25,6 +25,10 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 echo "Installing Homebrew..."
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
+# Install QuicklookStephen
+echo "Installing QuicklookStephen..."
+brew cask install qlstephen
+
 ###############################################################################
 # Git init                                                                    #
 ###############################################################################
