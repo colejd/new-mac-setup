@@ -39,7 +39,7 @@ sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo Hos
 # Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
-# Automatically rearrange Spaces based on most recent use
+# Disable automatic rearranging of Spaces based on most recent use
 defaults write com.apple.dock mru-spaces -bool false
 
 # Use scroll gesture with the Ctrl (^) modifier key to zoom
