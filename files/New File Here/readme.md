@@ -1,0 +1,1 @@
+Make sure to give the app accessibility permissions, or you'll get a "not allowed to send keystrokes" error.

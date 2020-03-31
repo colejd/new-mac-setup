@@ -1,0 +1,1 @@
+osacompile -o NewFileHere.app script.applescript

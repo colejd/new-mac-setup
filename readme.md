@@ -20,6 +20,8 @@ If you have a Vanilla Whitefox keyboard and you're using my Hammerspoon scripts,
 
 ![alt text][whitefox-preview]
 
+### New File Here
+A small utility you can keep in the toolbar of your Finder windows. Creates a new file in the topmost Finder window with a blank name.
 
 ## Links
 * https://github.com/mathiasbynens/dotfiles/blob/master/.macos
