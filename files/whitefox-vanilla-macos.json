@@ -1058,7 +1058,8 @@
     }
   ],
   "custom": {
-    "0": "\n#~~~START ANIMATION (${__NAME__}) INJECTION~~~#\n# Macro 'Hyper Mute'\nU\"PAGEDOWN\" : U\"LCTRL\" + U\"LALT\" + U\"LGUI\" + U\"M\";\n# Macro 'Hyper'\nU\"PAGEUP\" : U\"LCTRL\" + U\"LALT\" + U\"LGUI\";\n#~~~END ANIMATION (${__NAME__}) INJECTION~~~#\n"
+    "0": "\n#~~~START ANIMATION (${__NAME__}) INJECTION~~~#\n# Macro 'Hyper Mute'\nU\"PAGEDOWN\" : U\"LCTRL\" + U\"LALT\" + U\"LGUI\" + U\"M\";\n# Macro 'Hyper'\nU\"PAGEUP\" : U\"LCTRL\" + U\"LALT\" + U\"LGUI\";\n#~~~END ANIMATION (${__NAME__}) INJECTION~~~#\n\n#~~~START ANIMATION (${__NAME__}) INJECTION~~~#\n# Macro 'Hyper Mute'\nU\"PAGEDOWN\" : U\"LCTRL\" + U\"LALT\" + U\"LGUI\" + U\"M\";\n# Macro 'Hyper'\nU\"PAGEUP\" : U\"LCTRL\" + U\"LALT\" + U\"LGUI\";\n#~~~END ANIMATION (${__NAME__}) INJECTION~~~#\n",
+    "1": "\n#~~~START ANIMATION (${__NAME__}) INJECTION~~~#\n# Macro 'Carriage Return'\nU\"ENTER\" : U\"LGUI\" + U\"RIGHT\", U\"ENTER\";\n#~~~END ANIMATION (${__NAME__}) INJECTION~~~#\n"
   },
   "animations": {
     "all_on": {
@@ -1084,35 +1085,21 @@
   },
   "leds": [],
   "macros": {
-    "0": [
+    "1": [
       {
-        "name": "Hyper Mute",
+        "name": "Carriage Return",
         "trigger": [
           [
-            "PAGEDOWN"
+            "ENTER"
           ]
         ],
         "output": [
           [
-            "LCTRL",
-            "LALT",
             "LGUI",
-            "M"
-          ]
-        ]
-      },
-      {
-        "name": "Hyper",
-        "trigger": [
+            "RIGHT"
+          ],
           [
-            "PAGEUP"
-          ]
-        ],
-        "output": [
-          [
-            "LCTRL",
-            "LALT",
-            "LGUI"
+            "ENTER"
           ]
         ]
       }
