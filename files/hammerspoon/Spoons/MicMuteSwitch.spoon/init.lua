@@ -169,8 +169,14 @@ end
 -- Private Functions
 -----------------------------
 
+-- Returns true if any device is muted
 local isMuted = function()
-	return hs.audiodevice.defaultInputDevice():muted()
+	for index, device in pairs(hs.audiodevice.allInputDevices()) do
+		if not device:muted() then
+			return false
+		end
+	end
+	return true
 end
 
 -- Refresh the UI to reflect microphone mute state
@@ -269,7 +275,7 @@ function obj:createImageAlert(xPositionIndex, yPositionIndex)
 		},
 	}
 	draw:behavior(hs.canvas.windowBehaviors.canJoinAllSpaces | hs.canvas.windowBehaviors.stationary)
-	draw:level(canvas.windowLevels.cursor)
+	draw:level(canvas.windowLevels._MaximumWindowLevelKey)
 
     return draw
 end
@@ -281,9 +287,7 @@ end
 -- Mutes the system microphon and toggles mute in Zoom via the menu bar.
 -- You could extend this to mute other specific applications as well.
 function obj:toggleMicMute()
-	local mic = hs.audiodevice.defaultInputDevice()
-	local zoom = hs.application('Zoom')
-	if mic:muted() then
+	if isMuted() then
 		self:unmute()
 	else
 		self:mute()
@@ -291,10 +295,12 @@ function obj:toggleMicMute()
 end
 
 function obj:mute()
-	local mic = hs.audiodevice.defaultInputDevice()
-	local zoom = hs.application('Zoom')
+	for index, device in pairs(hs.audiodevice.allInputDevices()) do
+        device:setMuted(true)
+    end
 
-	mic:setMuted(true)
+	-- Mute in Zoom
+	local zoom = hs.application('Zoom')
 	if zoom then
 		local ok = zoom:selectMenuItem('Mute Audio')
 		if not ok then
@@ -307,10 +313,12 @@ function obj:mute()
 end
 
 function obj:unmute()
-	local mic = hs.audiodevice.defaultInputDevice()
+	for index, device in pairs(hs.audiodevice.allInputDevices()) do
+        device:setMuted(false)
+	end
+	
+	-- Unmute in Zoom
 	local zoom = hs.application('Zoom')
-
-	mic:setMuted(false)
 	if zoom then
 		local ok = zoom:selectMenuItem('Unmute Audio')
 		if not ok then
