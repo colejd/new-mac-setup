@@ -17,6 +17,9 @@ echo "Installing Spaceship prompt..."
 git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
 ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 
+# Install powerlevel10k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
 # Install zsh-autosuggestions (https://github.com/zsh-users/zsh-autosuggestions)
 echo "Installing zsh-autosuggestions..."
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
@@ -61,13 +64,12 @@ tell application "Terminal"
 end tell
 EOD
 
-#for app in "Terminal"; do
-#	killall "${app}" &> /dev/null
-#done
+###############################################################################
+# Install helper scripts                                                      #
+###############################################################################
+
+
 
 rm -rf ./temp
 
-# Prompt for manual setup steps
-echo " 
-Done!
-"
+echo "Done!"
