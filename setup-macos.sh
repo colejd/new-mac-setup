@@ -17,6 +17,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 mkdir ~/Dev
 mkdir ~/Dev/Projects
 mkdir ~/Dev/Resources
+mkdir ~/Pictures/Screenshots
 
 ###############################################################################
 # General UI/UX                                                               #
@@ -69,7 +70,8 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
 # Show the ~/Library folder
-chflags nohidden ~/Library
+# https://apple.stackexchange.com/questions/378377/how-to-permanently-unhide-the-users-library-folder-in-catalina
+chflags nohidden ~/Library && xattr -d com.apple.FinderInfo  ~/Library
 
 # Set finder search to search current directory by default
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"

@@ -5,11 +5,17 @@
 echo "Installing Homebrew..."
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
+read -p "Follow the Homebrew instructions above in another terminal window, then press any key to continue..."
+
+# Reloads current terminal window with Homebrew changes (I think?)
+source ~/.zshrc
+source ~/.zprofile
+
 # Do brew cask installs here
 
 # Install QuicklookStephen
 echo "Installing QuicklookStephen..."
-brew cask install qlstephen
+brew install --cask qlstephen
 
 echo "Go download TermHere!"
 echo "https://github.com/hbang/TermHere"
