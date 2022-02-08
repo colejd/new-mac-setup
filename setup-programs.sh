@@ -20,8 +20,8 @@ xattr -cr ~/Library/QuickLook/QLStephen.qlgenerator
 qlmanage -r
 qlmanage -r cache
 
-echo "Go download TermHere!"
-echo "https://github.com/hbang/TermHere"
+echo "Go download OpenInTerminal-Lite!"
+echo "https://github.com/Ji4n1ng/OpenInTerminal"
 
 brew install blackhole-2ch
 echo "BlackHole is now installed. Point iOS Simulator's audio output to BlackHole to fix crackling audio on Macbook Speakers while the simulator is open."
