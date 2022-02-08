@@ -13,9 +13,12 @@ source ~/.zprofile
 
 # Do brew cask installs here
 
-# Install QuicklookStephen
+# Install QuicklookStephen (https://github.com/whomwah/qlstephen)
 echo "Installing QuicklookStephen..."
 brew install --cask qlstephen
+xattr -cr ~/Library/QuickLook/QLStephen.qlgenerator
+qlmanage -r
+qlmanage -r cache
 
 echo "Go download TermHere!"
 echo "https://github.com/hbang/TermHere"
