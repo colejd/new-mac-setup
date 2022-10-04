@@ -91,7 +91,7 @@ defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 defaults write NSGlobalDomain com.apple.trackpad.forceClick -bool false
 
 # Set trackpad cursor speed to my preferences
-defaults write NSGlobalDomain com.apple.trackpad.scaling -float 1
+# defaults write NSGlobalDomain com.apple.trackpad.scaling -float 1
 
 defaults write com.apple.AppleMultitouchTrackpad Clicking -bool false
 defaults write com.apple.AppleMultitouchTrackpad TrackpadRotate -bool false
