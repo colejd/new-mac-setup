@@ -5,7 +5,9 @@ I built this for personal use, and am releasing this publicly to help out anyone
 ## Usage
 
 - Install an Xcode version at https://developer.apple.com/download/applications/
+- Launch Xcode once and follow instructions until you get to the "Welcome to Xcode" landing screen, then close Xcode.
 - Install the command line tools by running `xcode-select --install` in the terminal
+- Accept the command line tools EULA by running `sudo xcodebuild -license` in the terminal
 - Clone this repo.
 
 There are a few scripts in here to run:

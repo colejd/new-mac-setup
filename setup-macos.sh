@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/zsh
 
 
 # Close any open System Preferences panes, to prevent them from overriding

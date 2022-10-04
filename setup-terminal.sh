@@ -1,4 +1,12 @@
-#!/usr/bin/env bash
+#!/bin/zsh
+
+# Check if Xcode is installed before continuing.
+if xcode-select --install 2>&1 | grep installed; then
+    echo "Xcode and command line tools are installed, proceeding..."
+else
+    echo "Install Xcode command line tools first! You should have just gotten a prompt to install them. Finish that process and then re-run this script."
+    exit
+fi
 
 WORKING_DIRECTORY=$PWD
 
@@ -6,10 +14,11 @@ mkdir temp
 
 # Install Oh My ZSH (https://github.com/robbyrussell/oh-my-zsh)
 echo "Installing Oh My ZSH..."
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
 # Install Fira Code font (https://github.com/tonsky/FiraCode)
 echo "Installing Fira Code font..."
+mkdir ~/Library/Fonts
 curl "https://github.com/tonsky/FiraCode/releases/download/1.207/FiraCode_1.207.zip" -o ./temp/fira.zip -J -L
 unzip ./temp/fira.zip -d ./temp/fira
 cp ./temp/fira/ttf/FiraCode-Retina.ttf ~/Library/Fonts/FiraCode-Retina.ttf
@@ -17,8 +26,8 @@ echo "Visit here to set up VS Code for the right font: https://github.com/tonsky
 
 # Install spaceship prompt (https://github.com/denysdovhan/spaceship-prompt)
 echo "Installing Spaceship prompt..."
-git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
-ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+git clone https://github.com/spaceship-prompt/spaceship-prompt ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/spaceship-prompt --depth=1
+ln -s ~/.oh-my-zsh/custom/themes/spaceship-prompt/spaceship.zsh-theme ~/.oh-my-zsh/custom/themes/spaceship.zsh-theme
 
 # Install zsh-autosuggestions (https://github.com/zsh-users/zsh-autosuggestions)
 echo "Installing zsh-autosuggestions..."
