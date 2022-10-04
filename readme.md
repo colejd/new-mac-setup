@@ -1,11 +1,17 @@
 This repo contains a shell script and resources to set up a new computer the way I like it.
 
+I built this for personal use, and am releasing this publicly to help out anyone else who might want to draw inspiration - **I assume no liability for any damage these scripts may cause to your machine!**
+
 ## Usage
-Clone this repo. There are a few scripts in here to run:
+
+- Install an Xcode version at https://developer.apple.com/download/applications/
+- Install the command line tools by running `xcode-select --install` in the terminal
+- Clone this repo.
+
+There are a few scripts in here to run:
 - `setup-macos.sh`: Run this first. Modifies MacOS preferences and sets up folder structure.
 - `setup-terminal.sh`: Sets up the terminal just the way I like it, along with some good utility scripts for iOS development.
-
-You can also run `setup-terminal.sh` to auto-install dependencies that I use for the terminal. This one involves a bunch of network requests, so be careful that they're all still correct when you run this. You may not want to do this. **I assume no liability for any damage these scripts may cause to your machine!**
+    * This one involves a bunch of network requests, so be careful that they're all still correct when you run this.
 
 ## Also Included
 ### Hammerspoon
