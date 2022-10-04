@@ -3,7 +3,7 @@
 # Installation:
 # Add this line to your .zshrc, .bashrc or .bash-profile:
 #
-# source /path/to/xcode-helpers.sh
+# source /path/to/xcode-helpers.zsh
 
 # used by ox function
 function fuzzify
