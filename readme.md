@@ -11,8 +11,8 @@ I built this for personal use, and am releasing this publicly to help out anyone
 - Clone this repo.
 
 There are a few scripts in here to run:
-- `setup-macos.sh`: Run this first. Modifies MacOS preferences and sets up folder structure.
-- `setup-terminal.sh`: Sets up the terminal just the way I like it, along with some good utility scripts for iOS development.
+- `setup-macos.zsh`: Run this first. Modifies MacOS preferences and sets up folder structure.
+- `setup-terminal.zsh`: Sets up the terminal just the way I like it, along with some good utility scripts for iOS development.
     * This one involves a bunch of network requests, so be careful that they're all still correct when you run this.
 
 ## Also Included
