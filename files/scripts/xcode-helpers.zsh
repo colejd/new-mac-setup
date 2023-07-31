@@ -47,26 +47,20 @@ function ox
         fi
     fi
 }
-
-function _switchXcode
-{
-    sudo xcode-select -s "$1" && echo "Switched to `xcode-select -p`."
-    ln -sf "$1" /Applications/Xcode.app
+_ox() { # Autocomplete function definition
+  _arguments \
+    '1: :_dirs'  # Accept arbitrary directory as the first argument
 }
+compdef _ox ox
 
-function xc
-{
-    _switchXcode /Applications/Xcode.app
-}
 
-function xcbeta
-{
-    _switchXcode /Applications/Xcode-beta.app
-}
-
-function xcodebrokeagain
+function delete_derived_data
 {
     echo "Deleting derived data..."
     rm -rf ~/Library/Developer/Xcode/DerivedData
     echo "Derived data has been deleted."
 }
+_delete_derived_data() { # Autocomplete function definition
+    _arguments  # No arguments
+}
+compdef _delete_derived_data delete_derived_data
