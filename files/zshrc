@@ -19,6 +19,12 @@ plugins=(
   git
   zsh-autosuggestions
   zsh-syntax-highlighting
+  brew
+  ag
+  autojump
+  xcode
+  macos
+  jump
 )
 
 source $ZSH/oh-my-zsh.sh
