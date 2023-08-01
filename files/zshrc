@@ -55,4 +55,5 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Load custom scripts
 source ~/Dev/Resources/Tools/Scripts/loadall.sh
