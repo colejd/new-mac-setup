@@ -6,3 +6,4 @@ DIR=$(dirname $0)
 source $DIR/macos-helpers.zsh
 source $DIR/xcode-helpers.zsh
 source $DIR/git-helpers.zsh
+source $DIR/ios-helpers.zsh
